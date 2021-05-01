@@ -8,6 +8,8 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const cadastroRouter=require('./routes/cadastro');
 const saveRouter=require('./routes/save');
+const listRouter=require('./routes/list');
+const editRouter=require('./routes/edit');
 
 const app = express();
 
@@ -19,14 +21,21 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'node_modules/bootstrap')));
-app.use(express.static(path.join(__dirname, 'node_modules/@popperjs/core')));
+
+app.use('/static',
+express.static(path.resolve('./public')));
+
+app.use('/static',
+express.static(path.resolve('./node_modules/bootstrap')));
+app.use('/static',express.static(path.resolve('./node_modules/@popperjs/core')));
+app.use('/static',express.static(path.resolve('./node_modules/font-awesome')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/cadastro',cadastroRouter);
 app.use('/save',saveRouter);
+app.use('/list',listRouter);
+app.use('/edit',editRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -17,15 +17,8 @@ module.exports=(Sequelize,DataType)=>{
         senha:{
           allowNull:false,
           type:DataType.STRING(12)
-        },
-        createdAt:{
-          allowNull:false,
-          type:DataType.DATE
-        },
-        updatedAt:{
-          allowNull:false,
-          type:DataType.DATE
         }
+        
     });
     return Users;
 }
