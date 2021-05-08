@@ -6,7 +6,8 @@ module.exports={
         const data={
             nome:req.body.nome,
             email:req.body.email,
-            senha:req.body.senha
+            senha:req.body.senha,
+            ativo:true
         };
         
         const results=await Users.create(data);

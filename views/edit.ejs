@@ -12,13 +12,15 @@
   </head>
   <body>
     <div class="container mt-5">
-        <form method="POST" action="/save" >
+        <form method="POST" action="/update" >
         
             <div class="row">
                 <div class="col-8 form-group">
                     <label class="form-label">Nome</label>
                     <input type="text" name="nome" class="form-control"
                     value="<%=data.nome %>">
+                    <input type="hidden" name="id" 
+                    value="<%=data.id %>">
                 </div>
                 <div class="col-8 form-group">
                     <label class="form-label">Email</label>

@@ -10,6 +10,8 @@ const cadastroRouter=require('./routes/cadastro');
 const saveRouter=require('./routes/save');
 const listRouter=require('./routes/list');
 const editRouter=require('./routes/edit');
+const updateRouter=require('./routes/update');
+const trashRouter=require('./routes/trash');
 
 const app = express();
 
@@ -36,6 +38,8 @@ app.use('/cadastro',cadastroRouter);
 app.use('/save',saveRouter);
 app.use('/list',listRouter);
 app.use('/edit',editRouter);
+app.use('/update',updateRouter);
+app.use('/trash',trashRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

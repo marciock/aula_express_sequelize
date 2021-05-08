@@ -4,6 +4,7 @@ module.exports={
 
     show:async(req,res)=>{
         const results=await Users.findAll({
+            where:{ativo:true},
             attributes:['id','nome','email']
         });
 
@@ -14,6 +15,7 @@ module.exports={
     },
     view:async (req,res)=>{
         const results=await Users.findAll({
+            where:{ativo:true},
             attributes:['id','nome','email']
         });
 

@@ -17,7 +17,11 @@ module.exports=(Sequelize,DataType)=>{
         senha:{
           allowNull:false,
           type:DataType.STRING(12)
-        }
+        },
+        ativo:{
+          allowNull:false,
+          type:DataType.BOOLEAN
+        },
         
     });
     return Users;

@@ -21,6 +21,10 @@ module.exports = {
       allowNull:false,
       type:Sequelize.STRING(12)
     },
+    ativo:{
+      allowNull:false,
+      type:Sequelize.BOOLEAN
+    },
     createdAt:{
       allowNull:false,
       type:Sequelize.DATE

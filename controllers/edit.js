@@ -7,7 +7,7 @@ module.exports={
         const param=req.params.id;
 
         const results=await Users.findOne({
-            where:{id:param},
+            where:{id:param,ativo:true},
             attributes:['id','nome','email']
         });
 

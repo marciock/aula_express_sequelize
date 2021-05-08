@@ -20,6 +20,7 @@
             <th>Nome</th>
             <th>email</th>
             <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +31,11 @@
             <td><a href="/edit/<%= d.id %>" class="btn btn-outline-warning">
               <i class="fa fa-edit"></i>
             </a></td>
+            <td><button type="button" class="btn btn-outline-danger" 
+              id="trash<%=d.id %>" data-id="<%= d.id %>">
+              <i class="fa fa-trash"></i>
+            </button></td>
+
           </tr>
           <% } %>
         </tbody>
@@ -46,12 +52,70 @@
     <script src="/static/dist/umd/popper.min.js"></script>
     <script src="/static/dist/js/bootstrap.min.js" ></script>
     <script>
+      const tbody=document.querySelector('tbody')
       const plus=document.getElementById('plus');
+      const trash=document.querySelectorAll('[data-id]');
+      const url='/trash';
+      
+      trash.forEach(b=>{
+
+        b.addEventListener('click',()=>{
+
+            let param={id:b.dataset.id};
+
+            let response=fetch(url,{
+              method:'POST',
+              headers:{
+                'Content-Type':'application/json;charset=utf-8'
+              },
+              body:JSON.stringify(param)
+            }).then(res=>{
+              return res.json();
+            }).then(data=>{
+              console.log(data);
+             // tbody.innerHTML='';
+              data.forEach(d=>{
+                let colunas=`<tr>
+                  <td>${d.nome}</td>
+                  <td>${d.email}</td>
+                  <td><a href="/edit/${d.id}" class="btn btn-outline-warning">
+                    <i class="fa fa-edit"></i>
+                  </a></td>
+                  <td><button type="button" class="btn btn-outline-danger" 
+                    id="trash${d.id}" data-id="${d.id}">
+                    <i class="fa fa-trash"></i>
+                  </button></td>
+                </tr>`;
+                console.log(colunas);
+                //tbody.innerHTML +=colunas;
+              })
+
+
+            })
+
+           
+
+
+        })  
+        
+
+
+      })
+     
+
 
       plus.addEventListener('click',()=>{
         window.location.href='/cadastro';
       })
+
+    
+      
+
+
+
+
     </script>
    
   </body>
+  
 </html>
