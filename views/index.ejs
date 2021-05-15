@@ -73,7 +73,7 @@
               return res.json();
             }).then(data=>{
               console.log(data);
-             // tbody.innerHTML='';
+              tbody.innerHTML='';
               data.forEach(d=>{
                 let colunas=`<tr>
                   <td>${d.nome}</td>
@@ -87,7 +87,7 @@
                   </button></td>
                 </tr>`;
                 console.log(colunas);
-                //tbody.innerHTML +=colunas;
+                tbody.innerHTML +=colunas;
               })
 
 

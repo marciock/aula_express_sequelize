@@ -12,6 +12,9 @@ const listRouter=require('./routes/list');
 const editRouter=require('./routes/edit');
 const updateRouter=require('./routes/update');
 const trashRouter=require('./routes/trash');
+const loginRouter=require('./routes/login');
+const checkRouter=require('./routes/checklogin');
+
 
 const app = express();
 
@@ -40,6 +43,10 @@ app.use('/list',listRouter);
 app.use('/edit',editRouter);
 app.use('/update',updateRouter);
 app.use('/trash',trashRouter);
+app.use('/login',loginRouter);
+app.use('/check_login',checkRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
