@@ -1,0 +1,18 @@
+const {Marcas} =require('../../models');
+
+module.exports={
+
+    view:async (req,res)=>{
+
+        const result=await Marcas.findAll(
+            {where:{ativo:true }},
+            {attributes:['id','marca','updatedAt']}
+            );
+
+            
+            
+            res.render('marcas',{data:result});
+    
+            
+    }
+}

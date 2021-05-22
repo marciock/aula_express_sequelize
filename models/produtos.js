@@ -1,4 +1,4 @@
-const { Sequelize } = require("sequelize/types");
+//const { Sequelize } = require("sequelize/types");
 
 module.exports=(Sequelize,DataType)=>{
     const Produtos=Sequelize.define('Produtos',{
@@ -6,31 +6,31 @@ module.exports=(Sequelize,DataType)=>{
             allowNull:false,
             primaryKey:true,
             autoIncrement:true,
-            type:Sequelize.INTEGER
+            type:DataType.INTEGER
           },
           produto:{
             allowNull:false,
-            style:Sequelize.STRING(80)
+            type:DataType.STRING(80)
           },
           marca_id:{
             allowNull:false,
-            style:Sequelize.INTEGER
+            type:DataType.INTEGER
           },
           descricao:{
             allowNull:true,
-            style:Sequelize.TEXT
+            type:DataType.TEXT
           },
           ativo:{
             allowNull:false,
-            type:Sequelize.BOOLEAN
+            type:DataType.BOOLEAN
           },
           createdAt:{
             allowNull:false,
-            type:Sequelize.DATE
+            type:DataType.DATE
           },
           updatedAt:{
             allowNull:false,
-            type:Sequelize.DATE
+            type:DataType.DATE
           },
     },{});
 

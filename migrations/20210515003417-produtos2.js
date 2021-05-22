@@ -11,15 +11,15 @@ module.exports = {
       },
       produto:{
         allowNull:false,
-        style:Sequelize.STRING(80)
+        type:Sequelize.STRING(80)
       },
       marca_id:{
         allowNull:false,
-        style:Sequelize.INTEGER
+        type:Sequelize.INTEGER
       },
       descricao:{
         allowNull:true,
-        style:Sequelize.TEXT
+        type:Sequelize.TEXT
       },
       ativo:{
         allowNull:false,

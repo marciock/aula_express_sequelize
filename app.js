@@ -15,6 +15,12 @@ const trashRouter=require('./routes/trash');
 const loginRouter=require('./routes/login');
 const checkRouter=require('./routes/checklogin');
 
+//instancia da rota de marcas
+const marcasRouter=require('./routes/marcas/marcas');
+const addMarcaRouter=require('./routes/marcas/addmarcas');
+const saveMarcasRouter=require('./routes/marcas/savemarcas');
+const editMarcasRouter=require('./routes/marcas/editmarcas');
+
 
 const app = express();
 
@@ -45,6 +51,13 @@ app.use('/update',updateRouter);
 app.use('/trash',trashRouter);
 app.use('/login',loginRouter);
 app.use('/check_login',checkRouter);
+
+
+//uso da rota marcas
+app.use('/marcas',marcasRouter);
+app.use('/add_marcas',addMarcaRouter);
+app.use('/save_marcas',saveMarcasRouter);
+app.use('/edit_marcas',editMarcasRouter);
 
 
 
