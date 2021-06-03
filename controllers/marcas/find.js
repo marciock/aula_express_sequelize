@@ -14,5 +14,19 @@ module.exports={
             res.render('marcas',{data:result});
     
             
-    }
+    },
+    list:async (req,res)=>{
+
+        const result=await Marcas.findAll(
+            {where:{ativo:true }},
+            {attributes:['id','marca']}
+            );
+
+            
+            
+            res.json(result);
+    
+            
+    },
+
 }

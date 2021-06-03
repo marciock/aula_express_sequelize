@@ -41,16 +41,12 @@
         </tbody>
       </table>
     </div>
-    <div class="fixed-bottom mb-5" style="margin-right: 2em;">
-      <button type="button" class="btn btn-success
-      rounded-pill float-end" id="plus">
-      <i class="fa fa-plus"></i>
-    </button>
-    </div>
+   <button-plus url="/cadastro" ></button-plus>
 
    
     <script src="/static/dist/umd/popper.min.js"></script>
     <script src="/static/dist/js/bootstrap.min.js" ></script>
+    <script type="module" src="/static/js/main.js"></script>
     <script>
       const tbody=document.querySelector('tbody')
       const plus=document.getElementById('plus');
@@ -104,10 +100,7 @@
      
 
 
-      plus.addEventListener('click',()=>{
-        window.location.href='/cadastro';
-      })
-
+      
     
       
 

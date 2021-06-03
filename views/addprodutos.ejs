@@ -19,15 +19,12 @@
                     <label class="form-label">Produto</label>
                     <input type="text" name="produto" class="form-control">
                 </div>
-                <div class="col-8 form-group">
-                    <label class="form-label">Produto</label>
-                    <select  name="marca_id" class="form-control form-select" >
 
-                    </select>
-                </div>
+                <drop-down label="marcas" url="/list_marcas"></drop-down>
+                
                 <div class="col-8 form-group">
-                    <label class="form-label">Produto</label>
-                   <text-area row="4" class="form-control"></text-area>
+                    <label class="form-label">Descrição</label>
+                   <text-area row="4" class="form-control" name="descricao"></text-area>
                 </div>
                
                 <div class="col-8 mt-2">
@@ -41,6 +38,7 @@
    
     <script src="/static/dist/umd/popper.min.js"></script>
     <script src="/static/dist/js/bootstrap.min.js" ></script>
+    <script type="module" src="/static/js/main.js"></script>
    
   </body>
 </html>

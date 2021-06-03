@@ -19,7 +19,11 @@ const checkRouter=require('./routes/checklogin');
 const marcasRouter=require('./routes/marcas/marcas');
 const addMarcaRouter=require('./routes/marcas/addmarcas');
 const saveMarcasRouter=require('./routes/marcas/savemarcas');
-const editMarcasRouter=require('./routes/marcas/editmarcas');
+//const editMarcasRouter=require('./routes/marcas/editmarcas');
+const listMarcasRouter=require('./routes/marcas/list');
+
+//instancia rota produtos
+const addProdutosRouter=require('./routes/produtos/addprodutos');
 
 
 const app = express();
@@ -57,8 +61,12 @@ app.use('/check_login',checkRouter);
 app.use('/marcas',marcasRouter);
 app.use('/add_marcas',addMarcaRouter);
 app.use('/save_marcas',saveMarcasRouter);
-app.use('/edit_marcas',editMarcasRouter);
+//app.use('/edit_marcas',editMarcasRouter);
+app.use('/list_marcas',listMarcasRouter);
 
+//uso da rota produtos
+
+app.use('/add_produtos',addProdutosRouter);
 
 
 // catch 404 and forward to error handler
