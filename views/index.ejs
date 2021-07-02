@@ -9,11 +9,12 @@
     <link href="/static/dist/css/bootstrap.min.css" rel="stylesheet" >
     <link href="/static/css/font-awesome.min.css" rel="stylesheet" >
 
-    <title>teste</title>
+    <title></title>
   </head>
   <body>
     
     <div class="container">
+     
       <table class="table table-striped">
         <thead>
           <tr>
@@ -48,6 +49,21 @@
     <script src="/static/dist/js/bootstrap.min.js" ></script>
     <script type="module" src="/static/js/main.js"></script>
     <script>
+
+
+
+      sessionStorage.setItem('name','Afronesio');
+
+     // document.cookie='login=Dulcelina;';
+
+     const login='<%= login %>';
+
+    document.cookie='login='+login;
+
+    
+
+     
+
       const tbody=document.querySelector('tbody')
       const plus=document.getElementById('plus');
       const trash=document.querySelectorAll('[data-id]');
