@@ -12,18 +12,13 @@ const listRouter=require('./routes/list');
 const editRouter=require('./routes/edit');
 const updateRouter=require('./routes/update');
 const trashRouter=require('./routes/trash');
-const loginRouter=require('./routes/login');
+const testeRouter=require('./routes/teste');
 const checkRouter=require('./routes/checklogin');
 
-//instancia da rota de marcas
-const marcasRouter=require('./routes/marcas/marcas');
-const addMarcaRouter=require('./routes/marcas/addmarcas');
-const saveMarcasRouter=require('./routes/marcas/savemarcas');
-//const editMarcasRouter=require('./routes/marcas/editmarcas');
-const listMarcasRouter=require('./routes/marcas/list');
 
-//instancia rota produtos
-const addProdutosRouter=require('./routes/produtos/addprodutos');
+const permissoesRouter=require('./routes/permissoes');
+
+
 
 
 const app = express();
@@ -53,20 +48,13 @@ app.use('/list',listRouter);
 app.use('/edit',editRouter);
 app.use('/update',updateRouter);
 app.use('/trash',trashRouter);
-app.use('/login',loginRouter);
+app.use('/teste',testeRouter);
 app.use('/check_login',checkRouter);
 
+app.use('/permissoes',permissoesRouter);
 
-//uso da rota marcas
-app.use('/marcas',marcasRouter);
-app.use('/add_marcas',addMarcaRouter);
-app.use('/save_marcas',saveMarcasRouter);
-//app.use('/edit_marcas',editMarcasRouter);
-app.use('/list_marcas',listMarcasRouter);
 
-//uso da rota produtos
 
-app.use('/add_produtos',addProdutosRouter);
 
 
 // catch 404 and forward to error handler

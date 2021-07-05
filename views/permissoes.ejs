@@ -9,7 +9,7 @@
     <link href="/static/dist/css/bootstrap.min.css" rel="stylesheet" >
     <link href="/static/css/font-awesome.min.css" rel="stylesheet" >
 
-    <title>Produtos</title>
+    <title>Permissões</title>
   </head>
   <body>
     
@@ -17,8 +17,9 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Marca</th>
-            <th>Data de Atualização</th>
+            <th>Usuario</th>
+            <th>Email</th>
+            <th>Permissao</th>
             
             <th></th>
             <th></th>
@@ -27,9 +28,10 @@
         <tbody>
         <% for(let d of data) { %>
           <tr>
-            <td><%= d.marca %></td>
-            <td data-id="data-<%= d.id %>"><%= d.updatedAt %></td>
-            <td><a href="/edit_marcas/<%=d.id %>" class="btn btn-sm btn-outline-warning">
+            <td><%= d.nome %></td>
+            <td data-id="data-<%= d.id %>"><%= d.email %></td>
+            <td data-id="data-<%= d.id %>"><%= d.Permissao %></td>
+            <td><a href="/edit_permissoes/<%=d.id %>" class="btn btn-sm btn-outline-warning">
               <i class="fa fa-edit"></i>
             </a></td>
             <td></td>

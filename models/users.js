@@ -14,15 +14,27 @@ module.exports=(Sequelize,DataType)=>{
           allowNull:false,
           type:DataType.STRING(70)
         },
+        permissao:{
+          allowNull:false,
+          type:DataType.INTEGER
+        },
         senha:{
           allowNull:false,
-          type:DataType.STRING(61)
+          type:DataType.STRING
         },
         ativo:{
           allowNull:false,
           type:DataType.BOOLEAN
         },
         
-    });
+    },{});
+
+    Users.associate=(models)=>{
+        Users.belongsTo(models.Permissoes,{
+          foreignKey:'permissao',
+            targetKey:'id',
+            as:'pe'
+        })
+    };
     return Users;
 }

@@ -1,12 +1,15 @@
 const {Users} =require('../models');
 const bcrypt=require('bcryptjs');
-
+require("dotenv").config();
+const jwt=require('jsonwebtoken');
 
 module.exports={
 
     check:async(req,res)=>{
         const email=req.body.email;
         const senha=req.body.senha;
+
+       
         
         const result=await Users.findOne(
             {where:{
@@ -16,16 +19,23 @@ module.exports={
         }
         );
 
+        //console.log(result.senha)
         if(result === null){
-            let message={message:'Email não encontrado'};
+            let message={message:'Login Inválido'};
 
-            res.render('error',message);
+            res.status(500).render('error',message);
+
         }else{
-            let compara=await bcrypt.compare(senha,result.senha);
+            console.log(senha)
+          
+            bcrypt.compare(senha,result.senha,(err,data)=>{
+                console.log(data)
 
-            if(compara===true){
-                res.redirect('/');
-            }
+               
+            });
+            
+
+           
 
         }
 

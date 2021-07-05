@@ -30,7 +30,7 @@ export class ViewPass extends HTMLElement{
 
         button.type='button';
         input.type='password';
-
+        input.name="senha";
        button.addEventListener('click',()=>{
             let tipo=input.getAttribute('type');
 

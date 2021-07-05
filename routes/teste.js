@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const index=require('../controllers/index');
-
-router.get('/',index.show)
+const teste=require('../controllers/teste');
+router.get('/',teste.review)
 
 
 

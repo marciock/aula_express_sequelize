@@ -2,33 +2,36 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Marcas',{
+    return await queryInterface.createTable('Acessos',{
       id:{
         allowNull:false,
-        primaryKey:true,
         autoIncrement:true,
+        primaryKey:true,
         type:Sequelize.INTEGER
       },
-      marca:{
+      permissao:{
         allowNull:false,
-        type:Sequelize.STRING(60)
+          type:Sequelize.INTEGER
       },
-      ativo:{
+      rota:{
         allowNull:false,
-        type:Sequelize.BOOLEAN
+          type:Sequelize.STRING
       },
       createdAt:{
         allowNull:false,
-        type:Sequelize.DATE
+        type:Sequelize.DATE,
+        defaultValue: new Date()
       },
       updatedAt:{
         allowNull:false,
-        type:Sequelize.DATE
-      },
-    })
+        type:Sequelize.DATE,
+        defaultValue: new Date()
+      }
+    
+  })
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Marcas');
+    return await queryInterface.dropTable('Acessos')
   }
 };
